@@ -191,7 +191,7 @@ def player_numbers(team_names)
     if game_hash[location].values.include?(team_names)
       team.each do |attribute, data|
         if data.class == Hash
-          info.each do |player, stats|
+          data.each do |player, stats|
             stats.each do |stat,num|
               if stat == :number
                 number << num.to_i
