@@ -188,7 +188,7 @@ end
 def player_numbers(team_names)
   number = []
   game_hash.each do |location, team|
-    if game_hash[location].values.include?(team_names)
+    if team[location].values.include?(team_names)
       team.each do |attribute, data|
         if data.class == Hash
           data.each do |player, stats|
