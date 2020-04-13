@@ -188,21 +188,17 @@ end
 def player_numbers(team_names)
   number = []
   game_hash.each do |location, team|
-    if team[location].values.include?(team_names)
-      team.each do |attribute, data|
-        if data.class == Hash
-          data.each do |player, stats|
-            stats.each do |stat,num|
-              if stat == :number
-                number << num.to_i
+    if team[:name] == team_names
+      team[:players].each do |player|
+        player.each do |key, value|
+          if key == :number
+            number << value
               end
             end
           end
         end
       end
-    end
-  end
-  return number
+ number
 end
 
 
