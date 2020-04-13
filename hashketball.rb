@@ -204,3 +204,21 @@ def player_numbers(team_names)
   end
   return number
 end
+
+
+
+
+
+def big_shoe_rebounds
+  big_shoes = 0
+  rebounds = 0
+    game_hash.each do |location, team|
+      team[:players].each do |stats|
+        if stats[:shoe] > big_shoes
+          big_shoes = stats[:shoe]
+          rebounds = stats[:rebounds]
+        end
+      end
+    end
+  rebounds
+end
