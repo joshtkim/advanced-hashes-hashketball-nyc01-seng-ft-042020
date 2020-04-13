@@ -202,5 +202,5 @@ def player_numbers(team_names)
       end
     end
   end
-  return array
+  return number
 end
