@@ -185,26 +185,19 @@ def team_names
 end
 
 
-def player_numbers (team_name)
-  number = []
+def player_numbers(players_name)
   game_hash.each do |location, team|
-    binding.pry
-    if team[:name] == team_name
-      team[:players].each do |player|
-        binding.pry
-        player.each do |key, value|
-          binding.pry
-          if key == :number
-            number << value
-            binding.pry
-          end
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+        if player[:player_name] == players_name
+          return player[:number]
+        end
         end
       end
     end
   end
-  number
 end
-
 
 
 
